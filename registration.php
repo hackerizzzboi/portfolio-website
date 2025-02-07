@@ -56,16 +56,24 @@
             text-decoration: underline;
         }
     </style>
+    <script>
+        function validatePassword() {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirm_password").value;
+            if (password !== confirmPassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+            return true;
+        }
+    </script>
 </head>
 <body>
 <?php
     require('db.php');
 
-    // When form submitted, insert values into the database.
     if (isset($_REQUEST['username'])) {
-        // removes backslashes
         $username = stripslashes($_REQUEST['username']);
-        //escapes special characters in a string
         $username = mysqli_real_escape_string($con, $username);
         $email    = stripslashes($_REQUEST['email']);
         $email    = mysqli_real_escape_string($con, $email);
@@ -75,7 +83,6 @@
         $role     = mysqli_real_escape_string($con, $role);
         $create_datetime = date("Y-m-d H:i:s");
 
-        // Check if username or email already exists
         $checkQuery = "SELECT * FROM `users` WHERE username='$username' OR email='$email'";
         $checkResult = mysqli_query($con, $checkQuery);
         if (mysqli_num_rows($checkResult) > 0) {
@@ -84,7 +91,6 @@
                   <p class='link'>Click here to <a href='registration.php'>try again</a></p>
                   </div>";
         } else {
-            // Insert user data
             $query = "INSERT into `users` (username, password, email, role, create_datetime)
                      VALUES ('$username', '" . md5($password) . "', '$email', '$role', '$create_datetime')";
             $result = mysqli_query($con, $query);
@@ -102,12 +108,13 @@
         }
     } else {
 ?>
-    <form class="form" action="" method="post">
+    <form class="form" action="" method="post" onsubmit="return validatePassword();">
         <h1 class="login-title">Registration</h1>
         <input type="text" class="login-input" name="username" placeholder="Username" required />
         <input type="text" class="login-input" name="email" placeholder="Email Address" required />
-        <input type="password" class="login-input" name="password" placeholder="Password" required />
-        
+        <input type="password" class="login-input" name="password" id="password" placeholder="Password" required />
+        <input type="password" class="login-input" name="confirm_password" id="confirm_password" placeholder="Confirm Password" required />
+
         <!-- Role selection -->
         <select name="role" class="login-input" required>
             <option value="user">User</option>

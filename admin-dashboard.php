@@ -128,11 +128,7 @@ footer {
                 <p>View and manage registered users. <a href="user-management.php">Go to User Management</a></p>
             </div>
 
-            <div>
-                <h3>Site Settings</h3>
-                <p>Configure site settings such as appearance, features, and more. <a href="settings.html">Go to Settings</a></p>
-            </div>
-
+            
             <!-- Additional admin functionalities can be added here -->
         </section>
     </main>
