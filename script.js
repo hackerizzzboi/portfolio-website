@@ -1,3 +1,29 @@
+// Mobile Menu Toggle
+const menuIcon = document.getElementById("menu-icon");
+const navbar = document.querySelector(".navbar");
+
+menuIcon.addEventListener("click", () => {
+    navbar.classList.toggle("active");
+});
+
+// Quiz Timer Logic
+let timeLeft = 20;
+const timerElement = document.getElementById("timer");
+
+function startTimer() {
+    const interval = setInterval(() => {
+        timeLeft--;
+        timerElement.innerText = `Time left: ${timeLeft}s`;
+
+        if (timeLeft <= 0) {
+            clearInterval(interval);
+            timerElement.innerText = "Time's up!";
+        }
+    }, 1000);
+}
+
+document.getElementById("start-btn").addEventListener("click", startTimer);
+
 alert("Welcome to Hackerizzz Quiz 💋");
 
 const startButton = document.getElementById("start-btn");
