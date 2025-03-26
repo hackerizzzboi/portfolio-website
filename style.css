@@ -8,6 +8,10 @@
     scroll-behavior: smooth;
     font-family: 'Poppins', sans-serif;
 }
+.container {
+    width: 100%;  /* Full width for mobile */
+    padding: 20px;
+}
 
 :root {
     --bg-color: #101317;
