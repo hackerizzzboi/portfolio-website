@@ -1,4 +1,4 @@
-alert("Welcome to Hackerizzz Quiz 💋");
+alert("याद गर्नुहोस मित्रहरु याद गर्नुहोस, जेठ ३। समय धेरै छैन है 🎈");
 
 const startButton = document.getElementById("start-btn");
 const nextButton = document.getElementById("next-btn");
