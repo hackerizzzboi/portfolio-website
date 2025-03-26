@@ -8,6 +8,146 @@
     scroll-behavior: smooth;
     font-family: 'Poppins', sans-serif;
 }
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 3rem 9%;
+    background: rgba(0, 0, 0, 0.41);
+    backdrop-filter: blur(40px);
+    border-bottom: rgba(166, 166, 166, 0.242);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+/* Navbar links */
+.navbar a {
+    font-size: 1.8rem;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+/* Home section */
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+
+.home-content h1 {
+    font-size: 7rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+/* Mobile-specific Styles */
+@media (max-width: 768px) {
+    /* Header adjustments */
+    .header {
+        padding: 2rem 5%;
+    }
+
+    .logo {
+        font-size: 2.5rem;
+    }
+
+    /* Navbar links adjust for smaller screens */
+    .navbar a {
+        font-size: 1.6rem;
+        margin-left: 2rem;
+    }
+
+    /* Home section: Stack content vertically */
+    .home {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    /* Home content heading and image adjustments */
+    .home-content h1 {
+        font-size: 5rem;
+    }
+
+    .home-img {
+        width: 50vw;  /* Adjust width */
+        height: 50vw; /* Adjust height */
+    }
+
+    /* Adjust container for quiz and image */
+    .quiz-container {
+        flex-direction: column; /* Stack image and quiz */
+    }
+
+    .container {
+        flex: 1;
+        padding: 1.5rem;
+    }
+
+    /* Adjust button width for smaller screens */
+    #answer-buttons .btn {
+        width: 80%; /* Make buttons more flexible */
+    }
+
+    /* Adjust font sizes for question and answers */
+    #question {
+        font-size: 1.3rem; /* Reduce question size for mobile */
+    }
+
+    /* Timer adjustments */
+    #timer {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+}
+
+/* Extra small screen (Mobile) */
+@media (max-width: 480px) {
+    .home-content h1 {
+        font-size: 4rem;  /* Smaller font size for smaller screens */
+    }
+
+    .home-content h3 {
+        font-size: 2.5rem;
+    }
+
+    .navbar a {
+        font-size: 1.4rem;
+        margin-left: 1rem;
+    }
+
+    .home-img {
+        width: 60vw;  /* Adjust width for smaller screens */
+        height: 60vw; /* Adjust height */
+    }
+
+    #answer-buttons .btn {
+        font-size: 1.1rem; /* Adjust button text for smaller screens */
+    }
+
+    /* Adjust the padding for forms and other inputs */
+    .contact form .input-box input,
+    .contact form textarea {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1.4rem;
+    }
+}
+
 .container {
     width: 100%;  /* Full width for mobile */
     padding: 20px;
