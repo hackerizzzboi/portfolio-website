@@ -340,3 +340,123 @@ span {
     margin: 1rem 0;
     resize: none;
 }
+
+
+.container {
+    flex: 2;
+    background: var(--second-bg-color);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem var(--bg-color);
+}
+
+/* Ensure the container for image and quiz is set up correctly */
+.quiz-container {
+    display: flex; /* Align children (image and quiz) horizontally */
+    align-items: flex-start; /* Align items to the top */
+    gap: 2rem; /* Space between the image and the quiz container */
+}
+
+/* Styling for the image */
+
+
+/* Styling for the quiz container to the right of the image */
+.container {
+    flex: 2; /* Adjust space taken by the quiz container */
+    background: var(--second-bg-color);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+}
+
+/* Question styling */
+#question {
+    font-size: 1.5rem; /* Slightly smaller font size for better alignment */
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center; /* Center text alignment */
+}
+
+/* Answer buttons styling */
+#answer-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center; /* Center buttons horizontally */
+}
+
+#answer-buttons .btn {
+    background: var(--main-color);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.5rem var(--main-color);
+    font-size: 1.2rem; /* Slightly smaller font size for better fit */
+    color: var(--second-bg-color);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    width: 100%; /* Full width for consistent button size */
+    max-width: 300px; /* Limit max width of buttons */
+}
+
+/* Hover and state styles for buttons */
+#answer-buttons .btn:hover {
+    background: var(--text-color);
+    color: var(--main-color);
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+#answer-buttons .btn.correct {
+    background: #28a745; /* Green color for correct answers */
+}
+
+#answer-buttons .btn.incorrect {
+    background: #dc3545; /* Red color for incorrect answers */
+}
+
+#answer-buttons .btn.correct:hover {
+    background: #218838; /* Darker green for hover */
+}
+
+#answer-buttons .btn.incorrect:hover {
+    background: #c82333; /* Darker red for hover */
+}
+
+/* Timer styling */
+#timer {
+    width: 50px; /* Smaller width */
+    height: 50px; /* Smaller height */
+    font-size: 1.2rem; /* Smaller font size */
+    font-weight: bold;
+    color: white; /* White text color for better visibility */
+    background-color: #ff6347; /* Initial color (Tomato red) */
+    border-radius: 50%; /* Fully rounded to make a circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.5s ease; /* Smooth color transition */
+}
+
+/* Color transition for each second */
+@keyframes colorChange {
+    0% { background-color: #ff6347; } /* Tomato red */
+    10% { background-color: #ff4500; } /* Orange red */
+    20% { background-color: #ff7f50; } /* Coral */
+    30% { background-color: #ff8c00; } /* Dark orange */
+    40% { background-color: #ffd700; } /* Gold */
+    50% { background-color: #adff2f; } /* Green yellow */
+    60% { background-color: #32cd32; } /* Lime green */
+    70% { background-color: #00ff00; } /* Lime */
+    80% { background-color: #00fa9a; } /* Medium spring green */
+    90% { background-color: #00ced1; } /* Dark turquoise */
+    100% { background-color: #1e90ff; } /* Dodger blue */
+}
+
+.hide {
+    display: none;
+}
+
